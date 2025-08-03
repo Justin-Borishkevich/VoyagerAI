@@ -102,7 +102,7 @@ exports.logout = (req, res, next)=>{
         // Destroy the session
         req.session.destroy(err => {
             if (err) return next(err);
-            res.status(200).send('Account deleted');
+            res.redirect('/users/login');
         });
     } catch (err) {
         console.error(err);
